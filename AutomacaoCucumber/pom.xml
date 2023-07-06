@@ -25,5 +25,10 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.7</version>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>br.solus</groupId>
+			<artifactId>WebPrestador</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+  	</dependencies>
 </project>
