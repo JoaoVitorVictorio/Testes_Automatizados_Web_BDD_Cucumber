@@ -6,7 +6,6 @@ import io.cucumber.java.After;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Então;
-import io.cucumber.java.pt.Quando;
 import pages.Pages;
 
 public class InserirContasTest extends Pages {
@@ -18,8 +17,8 @@ public class InserirContasTest extends Pages {
         acesseSite("https://seubarriga.wcaquino.me/login");
 	}
 
-	@E("informar o usuário correto")
-	public void informarOUsuárioCorreto() {
+	@E("que informe o usuário correto")
+	public void queInformeOUsuárioCorreto() {
 		page.setEmail("joaoteste@gmail.com"); 
 	}
 
@@ -28,38 +27,38 @@ public class InserirContasTest extends Pages {
 		page.setSenha("123456");
 	}
 
-	@E("clicar em entrar")
-	public void clicarEmEntrar() {
+	@E("clique em entrar")
+	public void cliqueEmEntrar() {
 		page.clicarEntrar();
 	}
 
-	@E("estiver na tela inicial")
-	public void estiverNaTelaInicial() {
+	@E("esteja na tela inicial")
+	public void estejaNaTelaInicial() {
 		Assert.assertEquals("Bem vindo, João Vitor!", page.getTextoPaginaInicial());
 	}
 	
-	@E("clicar em contas")
-	public void clicarEmContas() {
+	@E("clique em contas")
+	public void cliqueEmContas() {
 	   page.clicarContas();
 	}
 
-	@E("clicar em adicionar")
-	public void clicarEmAdicionar() {
+	@E("clique em adicionar")
+	public void cliqueEmAdicionar() {
 	    page.clicarAdicionar();
 	}
 
-	@E("informar a conta {string}")
-	public void informarAConta(String contaTeste) {
+	@E("informe a conta {string}")
+	public void informeAConta(String contaTeste) {
 	    page.informaConta(contaTeste);
 	}
 
-	@Quando("clicar em Salvar")
-	public void clicarEmSalvar() {
+	@E("clique em Salvar")
+	public void cliqueEmSalvar() {
 		page.clicarSalvar();
 	}
 
-	@Então("a conta será inserida será salva com sucesso")
-	public void aContaSeráInseridaSeráSalvaComSucesso() {
+	@Então("a conta será salva com sucesso")
+	public void aContaSeráSalvaComSucesso() {
 		Assert.assertEquals("Conta adicionada com sucesso!", page.getContaSalvaComSucesso());
 	}
 
