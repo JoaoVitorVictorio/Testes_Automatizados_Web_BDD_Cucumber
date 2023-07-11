@@ -4,31 +4,30 @@
   <artifactId>AutomacaoCucumber</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   	<dependencies>
+		  
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>4.8.0</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>4.8.0</version>
-			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
 			<version>4.9.0</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.7</version>
+			<version>2.11.0</version>
 		</dependency>
-		<dependency>
-			<groupId>br.solus</groupId>
-			<artifactId>WebPrestador</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+
   	</dependencies>
 </project>

@@ -6,9 +6,10 @@ import io.cucumber.java.After;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Então;
+import io.cucumber.java.pt.Quando;
 import pages.Pages;
 
-public class InserirContasTest extends Pages {
+public class CadastramentoDeContasTest extends Pages {
 	Pages page = new Pages();
 
 	@Dado("que esteja acessando a aplicação")
@@ -52,19 +53,34 @@ public class InserirContasTest extends Pages {
 	    page.informaConta(contaTeste);
 	}
 
-	@E("clique em Salvar")
-	public void cliqueEmSalvar() {
+	@Quando("clicar em Salvar")
+	public void clicarEmSalvar() {
 		page.clicarSalvar();
 	}
+	
+	@Quando("clicar no botão reset")
+	public void clicarNoBotãoReset() {
+		page.clicarEmResetarDados();
+	}
+
 
 	@Então("a conta será salva com sucesso")
-	public void aContaSeráSalvaComSucesso() {
+	public void a_conta_será_salva_com_sucesso() {
 		Assert.assertEquals("Conta adicionada com sucesso!", page.getContaSalvaComSucesso());
 	}
-
+	
+	@Então("devera ser exibido a mensagem que já existe uma conta com o mesmo nome")
+	public void deveraSerExibidoAMensagemQueJáExisteUmaContaComOMesmoNome() {
+		Assert.assertEquals("Já existe uma conta com esse nome!", page.getContaComMesmoNome());
+	}
+	
+	@Então("os dados serao resetados com sucesso")
+	public void osDadosSeraoResetadosComSucesso() {
+		Assert.assertEquals("Dados resetados com sucesso!", page.getDadosResetadosComSucesso());
+	}
+	
 	@After
-	public void fecharNavegador() {
+	public static void fecharNavegador() {
 		DriverManager.driver.quit();
 	}
-
 }
