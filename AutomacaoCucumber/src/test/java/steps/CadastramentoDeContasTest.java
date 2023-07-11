@@ -1,6 +1,5 @@
 package steps;
 
-import org.junit.AfterClass;
 import org.junit.Assert;
 
 import basepages.DriverManager;
@@ -69,12 +68,17 @@ public class CadastramentoDeContasTest extends Pages {
 	public void deveraSerExibidoAMensagemQueJáExisteUmaContaComOMesmoNome() {
 		Assert.assertEquals("Já existe uma conta com esse nome!", page.getContaComMesmoNome());
 	}
-	
+
 	@Então("devera ser exibido a mensagem dizendo que não é possivel salvar uma conta sem nome")
 	public void deveraSerExibidoAMensagemDizendoQueNãoÉPossivelSalvarUmaContaSemNome() {
 		Assert.assertEquals("Informe o nome da conta", page.getContaSemNome());
 	}
-	
+
+	@Então("sera exibido a mensagem: {string}")
+	public void seraExibidoAMensagem(String mensagemEsperada) {
+		Assert.assertEquals(mensagemEsperada, page.getMensagem());
+	}
+
 	@After
 	public static void fecharNavegador() {
 		DriverManager.driver.quit();

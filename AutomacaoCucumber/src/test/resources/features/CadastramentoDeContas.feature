@@ -11,16 +11,14 @@ Funcionalidade: Cadastrar contas com sucesso
     E clique em contas
     E clique em adicionar
 
-  Cenário: Deve inserir uma conta com sucesso
-    E informe a conta "Conta de teste"
+  Esquema do Cenário: Deve validar regras cadastro contas
+    E informe a conta "<conta>"
     Quando clicar em Salvar
-    Então a conta será salva com sucesso
+    Então sera exibido a mensagem: "<mensagem>"
 
-  Cenário: Deve falhar inserir conta com mesmo nome
-    E informe a conta "Conta de teste"
-    Quando clicar em Salvar
-    Então devera ser exibido a mensagem que já existe uma conta com o mesmo nome
-
-  Cenário: Deve falhar inserir conta com mesmo nome
-    Quando clicar em Salvar
-    Então devera ser exibido a mensagem dizendo que não é possivel salvar uma conta sem nome
+    
+   Exemplos:
+   |      conta     |              mensagem              |
+   | Conta de teste |   Conta adicionada com sucesso!    |
+   |                |      Informe o nome da conta       |
+   | Conta de teste | Já existe uma conta com esse nome! |

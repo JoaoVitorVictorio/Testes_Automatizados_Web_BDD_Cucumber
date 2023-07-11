@@ -58,4 +58,8 @@ public class Pages extends BasePages {
 	public String getContaSemNome() {
 		return obterTexto(By.xpath("//div[contains(text(),'Informe o nome ')]"));
 	}
+
+	public Object getMensagem() {
+		return obterTexto(By.xpath("//div[starts-with(@class,'alert alert-')]"));
+	}
 }
