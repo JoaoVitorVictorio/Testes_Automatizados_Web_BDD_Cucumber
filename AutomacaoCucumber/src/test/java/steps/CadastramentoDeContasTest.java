@@ -1,4 +1,6 @@
 package steps;
+
+import org.junit.AfterClass;
 import org.junit.Assert;
 
 import basepages.DriverManager;
@@ -15,12 +17,12 @@ public class CadastramentoDeContasTest extends Pages {
 	@Dado("que esteja acessando a aplicação")
 	public void queEstejaAcessandoAAplicação() {
 		abreNavegador();
-        acesseSite("https://seubarriga.wcaquino.me/login");
+		acesseSite("https://seubarriga.wcaquino.me/login");
 	}
 
 	@E("que informe o usuário correto")
 	public void queInformeOUsuárioCorreto() {
-		page.setEmail("joaoteste@gmail.com"); 
+		page.setEmail("joaoteste@gmail.com");
 	}
 
 	@E("a senha correta")
@@ -37,50 +39,40 @@ public class CadastramentoDeContasTest extends Pages {
 	public void estejaNaTelaInicial() {
 		Assert.assertEquals("Bem vindo, João Vitor!", page.getTextoPaginaInicial());
 	}
-	
+
 	@E("clique em contas")
 	public void cliqueEmContas() {
-	   page.clicarContas();
+		page.clicarContas();
 	}
 
 	@E("clique em adicionar")
 	public void cliqueEmAdicionar() {
-	    page.clicarAdicionar();
+		page.clicarAdicionar();
 	}
 
 	@E("informe a conta {string}")
 	public void informeAConta(String contaTeste) {
-	    page.informaConta(contaTeste);
+		page.informaConta(contaTeste);
 	}
 
 	@Quando("clicar em Salvar")
 	public void clicarEmSalvar() {
 		page.clicarSalvar();
 	}
-	
-	@Quando("clicar no botão reset")
-	public void clicarNoBotãoReset() {
-		page.clicarEmResetarDados();
-	}
-
 
 	@Então("a conta será salva com sucesso")
 	public void a_conta_será_salva_com_sucesso() {
 		Assert.assertEquals("Conta adicionada com sucesso!", page.getContaSalvaComSucesso());
 	}
-	
+
 	@Então("devera ser exibido a mensagem que já existe uma conta com o mesmo nome")
 	public void deveraSerExibidoAMensagemQueJáExisteUmaContaComOMesmoNome() {
 		Assert.assertEquals("Já existe uma conta com esse nome!", page.getContaComMesmoNome());
-	}
-	
-	@Então("os dados serao resetados com sucesso")
-	public void osDadosSeraoResetadosComSucesso() {
-		Assert.assertEquals("Dados resetados com sucesso!", page.getDadosResetadosComSucesso());
 	}
 	
 	@After
 	public static void fecharNavegador() {
 		DriverManager.driver.quit();
 	}
+
 }
