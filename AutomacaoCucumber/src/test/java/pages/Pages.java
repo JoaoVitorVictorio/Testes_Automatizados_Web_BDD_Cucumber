@@ -54,4 +54,8 @@ public class Pages extends BasePages {
 	public String getDadosResetadosComSucesso() {
 		return obterTexto(By.xpath("//div[contains(text(),'resetados ')]"));
 	}
+
+	public String getContaSemNome() {
+		return obterTexto(By.xpath("//div[contains(text(),'Informe o nome ')]"));
+	}
 }

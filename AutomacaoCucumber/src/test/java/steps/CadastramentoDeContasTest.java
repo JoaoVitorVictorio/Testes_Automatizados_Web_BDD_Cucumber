@@ -70,6 +70,11 @@ public class CadastramentoDeContasTest extends Pages {
 		Assert.assertEquals("Já existe uma conta com esse nome!", page.getContaComMesmoNome());
 	}
 	
+	@Então("devera ser exibido a mensagem dizendo que não é possivel salvar uma conta sem nome")
+	public void deveraSerExibidoAMensagemDizendoQueNãoÉPossivelSalvarUmaContaSemNome() {
+		Assert.assertEquals("Informe o nome da conta", page.getContaSemNome());
+	}
+	
 	@After
 	public static void fecharNavegador() {
 		DriverManager.driver.quit();

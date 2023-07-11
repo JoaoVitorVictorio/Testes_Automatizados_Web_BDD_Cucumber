@@ -24,7 +24,6 @@ import pages.Pages;
 
 public class Runner extends Pages {
 	
-	
 	@BeforeClass
 	public static void resetarDadosExistentes(){
 		Pages page = new Pages();
