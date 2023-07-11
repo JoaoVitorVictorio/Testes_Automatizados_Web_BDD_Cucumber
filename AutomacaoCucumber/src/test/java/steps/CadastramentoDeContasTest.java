@@ -1,5 +1,6 @@
 package steps;
 
+import org.junit.AfterClass;
 import org.junit.Assert;
 
 import basepages.DriverManager;
@@ -79,9 +80,8 @@ public class CadastramentoDeContasTest extends Pages {
 		Assert.assertEquals(mensagemEsperada, page.getMensagem());
 	}
 
-	@After
-	public static void fecharNavegador() {
-		DriverManager.driver.quit();
+	@After(order = 0, value = "@funcionais")
+	public void fechaNavegador() {
+		driver.quit();
 	}
-
 }

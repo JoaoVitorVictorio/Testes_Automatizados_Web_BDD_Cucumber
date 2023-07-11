@@ -1,5 +1,6 @@
 # language: pt
 
+@unitarios
 Funcionalidade: Testando execução em Cucumber
 
 Cenário: Deve executar com sucesso

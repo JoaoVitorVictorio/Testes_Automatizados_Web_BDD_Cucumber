@@ -1,5 +1,6 @@
 # language: pt
 
+@unitarios
 Funcionalidade: Relizar contagem corretamente
 
 

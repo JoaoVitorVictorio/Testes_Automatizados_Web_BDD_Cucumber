@@ -1,5 +1,6 @@
 #language: pt
-@execute
+
+@funcional
 Funcionalidade: Cadastrar contas com sucesso
 
   Contexto: 

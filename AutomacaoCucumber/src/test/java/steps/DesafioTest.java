@@ -13,7 +13,7 @@ public class DesafioTest {
 		
 	}
 
-	@Dado("que o valor da passagem é R$ {double}")
+	@Dado("que o valor da passagem é R$ {int}")
 	public void queOValorDaPassagemÉR$(Double double1) {
 		
 	}

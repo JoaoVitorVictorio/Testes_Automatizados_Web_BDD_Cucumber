@@ -1,7 +1,7 @@
 # language: pt
 
+@unitarios
 Funcionalidade: Deve executar steps genéricos com sucesso
-
 
 Cenário: Deve criar steps genéricos para estes passos
     Dado que o ticket é AF345
